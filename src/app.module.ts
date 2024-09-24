@@ -6,8 +6,8 @@ import { performance } from 'node:perf_hooks';
 import * as depthLimit from 'graphql-depth-limit';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
-import Modules from '@/modules';
 import { ConfigModule } from '@nestjs/config';
+import Modules from '@/modules'; // Import your project modules
 
 @Module({
   imports: [
@@ -18,11 +18,6 @@ import { ConfigModule } from '@nestjs/config';
     GraphQLModule.forRootAsync<ApolloDriverConfig>({
       driver: ApolloDriver,
       useFactory: () => ({
-        // subscriptions: {
-        //   'subscriptions-transport-ws': {
-        //     onConnect: (connection, req) => ({ connection, req }),
-        //   },
-        // },
         installSubscriptionHandlers: true,
         autoSchemaFile: true,
         include: Modules,

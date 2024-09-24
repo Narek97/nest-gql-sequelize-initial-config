@@ -1,8 +1,13 @@
 import { Column, DataType, Model } from 'sequelize-typescript';
-import { Field } from '@nestjs/graphql';
+import 'reflect-metadata';
 
+//if we don't want to use @Field, imports reflect-metadata and in nestjs.js add
+// "compilerOptions": {
+// "plugins": ["@nestjs/graphql"],
+// "deleteOutDir": true
+// }
 export class BaseModel<T, G> extends Model<T, G> {
-  @Field(() => Number)
+  // @Field(() => Number)
   @Column({
     type: DataType.INTEGER,
     autoIncrement: true,
@@ -11,11 +16,11 @@ export class BaseModel<T, G> extends Model<T, G> {
   })
   id: number;
 
-  @Field(() => String)
+  // @Field(() => String)
   @Column({ type: DataType.DATE })
   createdAt: string;
 
-  @Field(() => String)
+  // @Field(() => String)
   @Column({ type: DataType.DATE })
   updatedAt: string;
 }

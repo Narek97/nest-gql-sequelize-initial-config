@@ -1,6 +1,6 @@
 import { BaseModel } from '../base.model';
 import { Column, DataType, HasMany, Table } from 'sequelize-typescript';
-import { Field, ObjectType } from '@nestjs/graphql';
+import { ObjectType } from '@nestjs/graphql';
 import { Departments } from '@Models/dbmodels/departments.model';
 
 interface CreateCompanyAttr {

@@ -1,13 +1,6 @@
 import { BaseModel } from '../base.model';
-import {
-  BelongsToMany,
-  Column,
-  DataType,
-  HasMany,
-  Table,
-} from 'sequelize-typescript';
+import { BelongsToMany, Column, DataType, Table } from 'sequelize-typescript';
 import { Field, ObjectType } from '@nestjs/graphql';
-import { Departments } from '@Models/dbmodels/departments.model';
 import { Employees } from '@Models/dbmodels/employees.model';
 
 interface CreateProjectAttr {

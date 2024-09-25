@@ -1,4 +1,4 @@
-import { Field, ObjectType } from '@nestjs/graphql';
+import { ObjectType } from '@nestjs/graphql';
 import { Companies } from '@Models/dbmodels/companies.model';
 import { PaginationModel } from '@/common/models/pagination.model';
 

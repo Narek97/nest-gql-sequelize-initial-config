@@ -7,7 +7,9 @@ import * as depthLimit from 'graphql-depth-limit';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { ConfigModule } from '@nestjs/config';
-import Modules from '@/modules'; // Import your project modules
+import Modules from '@/modules';
+import { APP_FILTER } from '@nestjs/core';
+import { HttpExceptionFilter } from '@/filters/http-exception.filter'; // Import your project modules
 
 @Module({
   imports: [
@@ -40,6 +42,9 @@ import Modules from '@/modules'; // Import your project modules
     DatabaseModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [
+    AppService,
+    { provide: APP_FILTER, useClass: HttpExceptionFilter },
+  ],
 })
 export class AppModule {}

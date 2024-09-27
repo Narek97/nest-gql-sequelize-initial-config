@@ -6,6 +6,7 @@ import { EmployeeProjects } from '@Models/dbmodels/employee-project.model';
 import { Organizations } from '@Models/dbmodels/organizations.model';
 import { Positions } from '@Models/dbmodels/positions.model';
 import { EmployeePositions } from '@Models/dbmodels/employee-position.model';
+import { ErrorLogs } from '@Models/dbmodels/error-logs.model';
 
 export default [
   Companies,
@@ -16,4 +17,5 @@ export default [
   EmployeeProjects,
   Positions,
   EmployeePositions,
+  ErrorLogs,
 ];

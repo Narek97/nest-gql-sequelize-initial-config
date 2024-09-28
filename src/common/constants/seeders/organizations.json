@@ -1,0 +1,54 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "Frontend Team",
+      "departmentId": 1
+    },
+    {
+      "id": 2,
+      "name": "Backend Team",
+      "departmentId": 1
+    },
+    {
+      "id": 3,
+      "name": "Testing Wizards",
+      "departmentId": 2
+    },
+    {
+      "id": 4,
+      "name": "QA Specialists",
+      "departmentId": 2
+    },
+    {
+      "id": 5,
+      "name": "Help Desk Heroes",
+      "departmentId": 3
+    },
+    {
+      "id": 6,
+      "name": "Tech Support Gurus",
+      "departmentId": 3
+    },
+    {
+      "id": 7,
+      "name": "Network Ninjas",
+      "departmentId": 4
+    },
+    {
+      "id": 8,
+      "name": "Infrastructure Masters",
+      "departmentId": 4
+    },
+    {
+      "id": 9,
+      "name": "Data Analysts Hub",
+      "departmentId": 5
+    },
+    {
+      "id": 10,
+      "name": "Machine Learning Squad",
+      "departmentId": 5
+    }
+  ]
+}

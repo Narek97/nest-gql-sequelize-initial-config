@@ -15,6 +15,9 @@ module.exports = {
         type: Sequelize.STRING,
         unique: true,
       },
+      role: {
+        type: Sequelize.STRING,
+      },
       createdAt: {
         type: Sequelize.DATE,
         defaultValue: Sequelize.fn('now'),

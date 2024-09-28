@@ -1,0 +1,29 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "Software Development",
+      "companyId": 1
+    },
+    {
+      "id": 2,
+      "name": "Quality Assurance",
+      "companyId": 1
+    },
+    {
+      "id": 3,
+      "name": "IT Support",
+      "companyId": 1
+    },
+    {
+      "id": 4,
+      "name": "Network Administration",
+      "companyId": 1
+    },
+    {
+      "id": 5,
+      "name": "Data Science",
+      "companyId": 1
+    }
+  ]
+}

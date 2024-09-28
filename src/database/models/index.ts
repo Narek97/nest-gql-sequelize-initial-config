@@ -7,6 +7,7 @@ import { Organizations } from '@Models/dbmodels/organizations.model';
 import { Positions } from '@Models/dbmodels/positions.model';
 import { EmployeePositions } from '@Models/dbmodels/employee-position.model';
 import { ErrorLogs } from '@Models/dbmodels/error-logs.model';
+import { ApiLogs } from '@Models/dbmodels/api-logs.model';
 
 export default [
   Companies,
@@ -18,4 +19,5 @@ export default [
   Positions,
   EmployeePositions,
   ErrorLogs,
+  ApiLogs,
 ];

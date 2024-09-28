@@ -1,4 +1,4 @@
 import { CompaniesModule } from '@/modules/companies/companies.module';
-import { ErrorLogsModule } from '@/modules/error-logs/error-logs.module';
+import { LogsModule } from '@/modules/logs/logs.module';
 
-export default [CompaniesModule, ErrorLogsModule];
+export default [CompaniesModule, LogsModule];

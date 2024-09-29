@@ -1,0 +1,24 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "position": "Intern"
+    },
+    {
+      "id": 2,
+      "position": "Junior"
+    },
+    {
+      "id": 3,
+      "position": "Middle"
+    },
+    {
+      "id": 4,
+      "position": "Senior"
+    },
+    {
+      "id": 5,
+      "position": "Lead"
+    }
+  ]
+}

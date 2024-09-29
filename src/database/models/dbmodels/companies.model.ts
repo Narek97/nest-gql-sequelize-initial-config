@@ -14,6 +14,9 @@ export class Companies extends BaseModel<Companies, CreateCompanyAttr> {
   @Column({ type: DataType.STRING, unique: true })
   name: string;
 
+  @Column({ type: DataType.STRING })
+  role: string;
+
   ///////////////////////////////// Relations /////////////////////////////////
   @HasMany(() => Departments, { foreignKey: 'departmentId' })
   departments: Departments[];

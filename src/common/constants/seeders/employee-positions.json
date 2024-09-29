@@ -1,0 +1,29 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "employeeId": 1,
+      "positionId": 1
+    },
+    {
+      "id": 2,
+      "employeeId": 2,
+      "positionId": 4
+    },
+    {
+      "id": 3,
+      "employeeId": 3,
+      "positionId": 3
+    },
+    {
+      "id": 4,
+      "employeeId": 3,
+      "positionId": 3
+    },
+    {
+      "id": 5,
+      "employeeId": 4,
+      "positionId": 5
+    }
+  ]
+}

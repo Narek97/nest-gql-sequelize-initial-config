@@ -1,4 +1,4 @@
-import { Args, Query, Resolver } from '@nestjs/graphql';
+import { Args, Context, Query, Resolver } from '@nestjs/graphql';
 import { CompaniesService } from './companies.service';
 import { GetCompaniesModel } from '@/modules/companies/models/get-companies.model';
 import { GetCompaniesInput } from '@/modules/companies/inputs/get-companies.input';
@@ -9,8 +9,9 @@ export class CompaniesResolver {
 
   @Query(() => GetCompaniesModel, { nullable: true })
   async getCompanies(
+    @Context() { sqlRowQueries }: any,
     @Args('getMyBoardsInput') getCompaniesInput: GetCompaniesInput,
   ): Promise<GetCompaniesModel> {
-    return this.companiesService.getCompanies(getCompaniesInput);
+    return this.companiesService.getCompanies(getCompaniesInput, sqlRowQueries);
   }
 }

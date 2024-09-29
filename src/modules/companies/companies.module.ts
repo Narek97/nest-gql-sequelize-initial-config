@@ -1,8 +1,9 @@
 import { Module } from '@nestjs/common';
-import { CompaniesResolver } from '@/modules/companies/companies.resolver';
+import { CompaniesService } from './companies.service';
+import { CompaniesResolver } from './companies.resolver';
 
 @Module({
-  providers: [CompaniesResolver],
-  exports: [],
+  providers: [CompaniesResolver, CompaniesService],
+  exports: [CompaniesService],
 })
 export class CompaniesModule {}

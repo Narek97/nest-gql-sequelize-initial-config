@@ -6,8 +6,10 @@ import { performance } from 'node:perf_hooks';
 import * as depthLimit from 'graphql-depth-limit';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
-import Modules from '@/modules';
 import { ConfigModule } from '@nestjs/config';
+import Modules from '@/modules';
+import { APP_FILTER } from '@nestjs/core';
+import { HttpExceptionFilter } from '@/filters/http-exception.filter'; // Import your project modules
 
 @Module({
   imports: [
@@ -18,11 +20,6 @@ import { ConfigModule } from '@nestjs/config';
     GraphQLModule.forRootAsync<ApolloDriverConfig>({
       driver: ApolloDriver,
       useFactory: () => ({
-        // subscriptions: {
-        //   'subscriptions-transport-ws': {
-        //     onConnect: (connection, req) => ({ connection, req }),
-        //   },
-        // },
         installSubscriptionHandlers: true,
         autoSchemaFile: true,
         include: Modules,
@@ -45,6 +42,9 @@ import { ConfigModule } from '@nestjs/config';
     DatabaseModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [
+    AppService,
+    { provide: APP_FILTER, useClass: HttpExceptionFilter },
+  ],
 })
 export class AppModule {}

@@ -33,6 +33,6 @@ export class Organizations extends BaseModel<
   @BelongsTo(() => Departments, { foreignKey: 'departmentId' })
   departments: Departments;
 
-  @HasMany(() => Employees, { foreignKey: 'employeeId' })
+  @HasMany(() => Employees, { foreignKey: 'organizationId' })
   employees: Employees[];
 }

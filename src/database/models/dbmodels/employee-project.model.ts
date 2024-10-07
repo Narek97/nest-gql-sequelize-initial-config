@@ -21,8 +21,8 @@ export class EmployeeProjects extends BaseModel<
   projectId: number;
 
   ///////////////////////////////// Relations /////////////////////////////////
-  @HasMany(() => Employees, { foreignKey: 'employeeId' })
-  employees: Employees[];
+  // @HasMany(() => Employees, { foreignKey: 'employeeId' })
+  // employees: Employees[];
 
   @HasMany(() => Projects, { foreignKey: 'projectId' })
   projects: Projects[];

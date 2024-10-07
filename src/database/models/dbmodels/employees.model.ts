@@ -14,7 +14,9 @@ import { Positions } from '@Models/dbmodels/positions.model';
 
 interface CreateEmployeesAttr {
   name: string;
-  companyId: number;
+  email: string;
+  departmentId: number;
+  organizationId: number;
 }
 
 @Table({ tableName: 'employees' })
@@ -36,22 +38,21 @@ export class Employees extends BaseModel<Employees, CreateEmployeesAttr> {
   @Column({ type: DataType.INTEGER, allowNull: false })
   organizationId: number;
 
+  @Field(() => Number)
+  @Column({ type: DataType.INTEGER, allowNull: false })
+  positionId: number;
+
   ///////////////////////////////// Relations /////////////////////////////////
 
   @BelongsTo(() => Departments, { foreignKey: 'departmentId' })
-  departments: Departments;
+  department: Departments;
 
   @BelongsTo(() => Organizations, { foreignKey: 'organizationId' })
-  organizations: Organizations;
+  organization: Organizations;
+
+  @BelongsTo(() => Positions, { foreignKey: 'positionId' })
+  position: Positions;
 
   @BelongsToMany(() => Projects, 'employee_projects', 'employeeId', 'projectId')
   projects: Projects[];
-
-  @BelongsToMany(
-    () => Positions,
-    'employee_position',
-    'employeeId',
-    'positionId',
-  )
-  positions: Positions[];
 }

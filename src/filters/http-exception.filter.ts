@@ -7,6 +7,7 @@ export class HttpExceptionFilter implements ExceptionFilter {
   constructor(private readonly logsService: LogsService) {}
 
   async catch(exception: any, host: ArgumentsHost) {
+    console.log(exception, 'exception');
     const ctx = host.switchToHttp();
     const response = ctx.getResponse<Response>();
     const status = response.statusCode ?? exception?.getStatus();

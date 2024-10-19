@@ -13,7 +13,7 @@ export class AccessGuard implements CanActivate {
     const req = ctx.getContext().req;
     const positions = ['Middle', 'Senior', 'Lead'];
 
-    if (!positions.includes(req.user.position.position))
+    if (!req.user || !positions.includes(req.user.position.position))
       throw new ForbiddenException('You do not have access to this.');
 
     return true;

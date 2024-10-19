@@ -31,9 +31,9 @@ export class Departments extends BaseModel<Departments, CreateDepartmentsAttr> {
   @BelongsTo(() => Companies, { foreignKey: 'companyId' })
   company: Companies;
 
-  @HasMany(() => Organizations, { foreignKey: 'organizationId' })
+  @HasMany(() => Organizations, { foreignKey: 'departmentId' })
   organizations: Organizations[];
 
-  @HasMany(() => Employees, { foreignKey: 'employeeId' })
+  @HasMany(() => Employees, { foreignKey: 'departmentId' })
   employees: Employees[];
 }

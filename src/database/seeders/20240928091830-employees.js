@@ -21,6 +21,7 @@ module.exports = {
             email: employee.email,
             departmentId: employee.departmentId,
             organizationId: employee.organizationId,
+            positionId: employee.positionId,
           },
         },
         ['id'],
@@ -29,7 +30,6 @@ module.exports = {
       newEmployees.push(employee);
     }
     if (!newEmployees.length) return;
-    console.log(newEmployees, 'newEmployees');
     return queryInterface.bulkInsert('employees', newEmployees, {});
   },
 

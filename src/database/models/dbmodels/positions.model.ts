@@ -1,5 +1,5 @@
 import { BaseModel } from '../base.model';
-import { BelongsToMany, Column, DataType, Table } from 'sequelize-typescript';
+import { Column, DataType, HasMany, Table } from 'sequelize-typescript';
 import { Field, ObjectType } from '@nestjs/graphql';
 import { Employees } from '@Models/dbmodels/employees.model';
 
@@ -15,11 +15,6 @@ export class Positions extends BaseModel<Positions, CreatePositionsAttr> {
   position: string;
 
   ///////////////////////////////// Relations /////////////////////////////////
-  @BelongsToMany(
-    () => Employees,
-    'employee_position',
-    'positionId',
-    'employeeId',
-  )
+  @HasMany(() => Employees, { foreignKey: 'positionId' })
   employees: Employees[];
 }

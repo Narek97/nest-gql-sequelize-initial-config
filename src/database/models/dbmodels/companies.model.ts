@@ -18,6 +18,6 @@ export class Companies extends BaseModel<Companies, CreateCompanyAttr> {
   role: string;
 
   ///////////////////////////////// Relations /////////////////////////////////
-  @HasMany(() => Departments, { foreignKey: 'departmentId' })
+  @HasMany(() => Departments, { foreignKey: 'companyId' })
   departments: Departments[];
 }
